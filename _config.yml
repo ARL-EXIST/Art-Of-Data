@@ -10,10 +10,10 @@
 ############################
 
 # Name of website
-title: My Website
+title: Art Of Data
 
 # Your name to show in the footer
-author: Some Person
+author: Arun Lal
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -128,7 +128,7 @@ navbar-var-length: false
 navbar-col: "#EAEAEA"
 navbar-text-col: "#404040"
 navbar-border-col: "#DDDDDD"
-page-col: "#FFFFFF"
+#page-col: "#FFFFFF"
 text-col: "#404040"
 link-col: "#008AFF"
 hover-col: "#0085A1"
@@ -142,7 +142,7 @@ footer-hover-col: "#0085A1"
 
 #navbar-img: "/assets/img/bgimage.png"
 #footer-img: "/assets/img/bgimage.png"
-#page-img: "/assets/img/bgimage.png"
+page-img: "/assets/img/360_F_498133097_e7yxe1fA5Sv1nFZ3MaCGjT5vYhuoQbE6.jpeg"
 
 # Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
 #mobile-theme-col: "#0085A1"
