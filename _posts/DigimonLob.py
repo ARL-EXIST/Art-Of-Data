@@ -90,26 +90,33 @@ def memTotCheck(m, a):
     
     return None
 
-"""def find(m, a, maxM, number, end):
-
+def callFind(w, w_Two, v, C, C_Two, n):
     global recursVals
-    recursVals = [[None]*len(m)]*len(a)
+    recursVals = [[-1] * ((C_Two * 1000) + C)]*n
+    mergeC = (C_Two * 1,000) + C
+    return find(w, w_Two, v, mergeC, n)
 
-    if recursVals[maxM][end] != None:
-        return recursVals[maxM][end]
+
+def find(w, w_Two, v, C, n):
+
+    #global recursVals
+    #recursVals = [[None]*len(w)]*len(v)
+
+    if recursVals[n][C] != -1:
+        return recursVals[n][C]
     
-    if maxM <= 0 or number <= 0 or end <=0:
+    if C == 0 or n < 0 :
         return 0
     
     result = 0
 
-    if(m[end] > maxM):
-        result = find(m, a, maxM, number, end - 1)
+    if(w_Two[n] > C / 1,000,000 and w[n] > C % 1,000,000):
+        result = find(w, w_Two, v, C, n - 1)
     else:
-        result = max(find(m, a, maxM, number, end - 1), a[end] + find(m, a, maxM - m[end], end - 1))
+        result = max(find(w, w_Two, v, C, n - 1), v[n] + find(w, w_Two, v, C - w[n] - (w_Two[n] * 1,000,000), n - 1))
     
-    recursVals[maxM][end] = result
-    return result"""
+    recursVals[n][C] = result
+    return result
 
 def binary_insert(list, high, low, item):
     
