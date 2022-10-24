@@ -12,7 +12,8 @@ comments: true
 **Note:** I apologise for the background which might make some things harder to read!
 
 {: .box-note}
-**Note:** Collaborator: Henry
+**Note:** Collaborator(s) - Henry
+
 {: .box-note}
 **Note:** videos watched for knapsack problem: https://youtu.be/xOlhR_2QCXY, https://youtu.be/dT6dvdbpChA
 
