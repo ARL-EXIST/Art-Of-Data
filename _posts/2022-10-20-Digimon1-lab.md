@@ -8,6 +8,13 @@ tags: [test]
 comments: true
 ---
 
+## Boxes
+I apologise for the background which might make some things harder to read!
+
+## Boxes
+Collaborator: Henry
+videos watched for knapsack problem: https://youtu.be/xOlhR_2QCXY, https://youtu.be/dT6dvdbpChA
+
 **This is my Digimon lab**
 
 
@@ -18,13 +25,15 @@ Write a blog post for your website with responses to the following:
 1.  What is the average speed (```Spd```) of all Digimon? 
 2.  Write a function that can count the number of Digimon with a specific attribute. For example, ```count_digimon("Type", "Vaccine")``` would return 70.
 3.  The Digimon on your team are restricted by the total amount of ```Memory``` that they need. If your team only has ```15 Memory```, name a team of up to 3 Digimon that has at least 300 attack (```Atk```) in total.
+4.  Describe your process in finding these answers. Include details such as who you worked with, what methods you tried, what worked or didn’t work, what could have gone better, and what you learned during this lab. Feel free to attach images, screenshots, pseudocode, etc to elaborate on your response!
 
-Describe your process in finding these answers. Include details such as who you worked with, what methods you tried, what worked or didn’t work, what could have gone better, and what you learned during this lab. Feel free to attach images, screenshots, pseudocode, etc to elaborate on your response! Submit your Python file using Google Classroom. You can also find the rubric there.
+Submit your Python file using Google Classroom. You can also find the rubric there.
 
 ## Answers:
 
 For all of these functions I decided to use DictReader as this allowed me to access a given column by using a name, rather than the element of a row, which I found easier to read while coding.
 
+**Question**
 1.  What is the average speed (```Spd```) of all Digimon?
 
 **Code:**
@@ -54,55 +63,26 @@ print("Average Speed is: %.2f" % average("Spd"))
 **Explanation**
 For this function I went through each row using ```for rows in data:```. I had two variables ```suum``` and ```count```, one to take the sum of all values in a specific ```header```'s column, and another to count the number of rows where I added a value to ```suum```. And then to get the average I just divided ```suum``` by ```count```.
 
+**Question**
+2.  Write a function that can count the number of Digimon with a specific attribute. For example, count_digimon("Type", "Vaccine") would return 70.
 
+**Code:**
+{% highlight python linenos %}
+#Takes header to knapsack the correct column and matches all pokemon whose header value is the specifier
+#to knapsack how many pokemon have that specific specifier
+def count_digimon(header, specifier):
+    with open("../datasets/digimon.csv", "r") as f:  
+        data = csv.DictReader(f)
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+        attribute = 0
 
-It can also be centered!
-
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}
-
-Here's a code chunk:
-
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+        for rows in data:
+            #checks if column value is specifier
+            if ((rows[header]) == specifier):
+                attribute += 1
+    
+        return (attribute)
 {% endhighlight %}
 
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
+**Explanation**
+For this function I take a ```header``` and ```specifier```. ```Attribute``` is effectively a count tracker, which increases when the ```header``` value for each row matches the given ```Specifier```.
