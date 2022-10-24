@@ -121,13 +121,6 @@ def attack_limit(memoryMax, attackMin):
         # - combination of up to 3 numbers that meet memMax and attackMin constraints
         indexes = memTotCheck(attackMem[1], attackMem[0], memoryMax, attackMin)
 
-
-        #       global recursVals - debugging code
-        #       recursVals = [[None] * (memoryMax + 1) ] * (len(attackMem[1]) + 1) - debugging code
-        #       print(str(len(attackMem[0]) + 1) + ", " + str(memoryMax + 1)) - debugging code
-        #       print(callKnapsack(attackMem[1], attackMem[0], memoryMax, len(attackMem[0])-1)) - debugging code
-        #       print(str(indexes[0]) + ", " + str(indexes[1]) + ", " + str(indexes[2])) - debugging code
-
         #if index's first value is not None, include it in final combo answer
         if indexes[0] != None:
             #if index's second value is not None, include it in final combo answer
@@ -173,13 +166,8 @@ def memTotCheck(m, a, mMax, aMin):
     #Check each x value for x (+ y (+ z)) combo
     for x in range(len(m)-1, -1, -1):
 
-        #       print("x = " + str(a[x])) - debugging code
-
         #if x alone is greater than aMin, return only x (all elements in m are 15 or less)
         if a[x] >= aMin:
-
-            #       print("x") # - debugging code
-
             return x, None, None
 
         #only check for an x + y combo if x <= mMax - 1, as y has a min value of 1
@@ -187,13 +175,8 @@ def memTotCheck(m, a, mMax, aMin):
             #Check each y value for x + y (+ z) combo where y is each next element after x
             for y in range(x-1, -1, -1):
 
-                #       print("y = " + str(a[y])) - debugging code
-
                 # if x + y is greater than aMin, and less than mMax, return x and y
                 if a[x] + a[y] >= aMin and m[x] + m[y] <= mMax:
-
-                    #       print("y") # - debugging code
-
                     return x, y, None
 
                 #if x + y memory > 14 then the combo with z is not within the Memory capacity
@@ -201,23 +184,16 @@ def memTotCheck(m, a, mMax, aMin):
                     #Check each z value for x + y + z combo where z is each next element after y
                     for z in range(y, -1, -1):
 
-                        #       print("z = " + str(a[z])) - debugging code
-                        #       print(a[x] + a[y] + a[z]) - debugging code
-
                         #If the combo >= minimum value, then check memory
                         # else - no other z value will reach minimum (Attack) value needed
                         # (as the a array is sorted least to greatest) so break z for loop
                         # and iterate to next y value
                         if a[x] + a[y] + a[z] >= aMin:
-
-                            #       print("300") - debugging code
-                            
+                        
                             #If also Within memory constraints, return x, y, z
                             if m[x] + m[y] + m[z] <= mMax:
-
-                                #       print("z") #- debugging code
-
                                 return x, y, z
+                                
                         else:
                             break
     
