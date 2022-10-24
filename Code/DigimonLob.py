@@ -11,7 +11,7 @@ from pickletools import read_bytes1
 #count increases by one every time a value gets added to sum
 #divide suum by count to get the average
 def average(header):
-    with open("digimon.csv", "r") as f:  
+    with open("datasets/digimon.csv", "r") as f:  
         data = csv.DictReader(f)
 
         suum = 0
@@ -30,7 +30,7 @@ def average(header):
 #Takes header to knapsack the correct column and matches all pokemon whose header value is the specifier
 #to knapsack how many pokemon have that specific specifier
 def count_digimon(header, specifier):
-    with open("digimon.csv", "r") as f:  
+    with open("datasets/digimon.csv", "r") as f:  
         data = csv.DictReader(f)
 
         attribute = 0
@@ -46,7 +46,7 @@ def count_digimon(header, specifier):
 #combination of at most 3 Digimon with at most memoryMax and at least attackMin
 # Returns the Number of the Digimon to use
 def attack_limit(memoryMax, attackMin):
-    with open("digimon.csv", "r") as f:  
+    with open("datasets/digimon.csv", "r") as f:  
         data = csv.DictReader(f)
 
         #attackMem stores 3 arrays - 1st for Attack, 2nd for Memory, 3rd for their Number to know which digimon matches to the attack/mem values
