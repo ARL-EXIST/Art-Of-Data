@@ -227,7 +227,8 @@ The attack_limit function runs as follows:
 
 One big limitation of this function is that ```memTotCheck``` is hardcoded to return up to 3 digimons/indexes. To stop this, you could write a recursive function - pseudocode:
 
-```def memTotCheck(Memory, Attack, number, maxMem, end):
+~~~
+def memTotCheck(Memory, Attack, number, maxMem, end):
 #where Memory and Attack are lists, number is the amount of elements (digimon) to include, end is the current element (starting at the top), and maxMem #is the most Memory that can be used
 
 if number or Capacity or end are 0: return 0
@@ -246,7 +247,7 @@ else:
     result's val = the val of calling this function with end - 1
     go through the index elements of result which are not None and insert the index elements of (calling this function with end - 1)
 return result
-```
+~~~
 
 which would give you back the max combination value of Attack and the indexes of digimon used to make up that attack value —— given ```Memory```, ```Attack```, the ```Number``` of digimon to include, and ```len(Attack)-1``` (i.e the end index of the Attack or Memory lists).
 The reason I did not implement a function like this in the final piece of code is because while I had tried to implement something similar, it did not work.
