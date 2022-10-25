@@ -128,7 +128,7 @@ navbar-var-length: false
 #navbar-col: "#EAEAEA"
 #navbar-text-col: "#404040"
 #navbar-border-col: "#DDDDDD"
-#page-col: "#FFFFFF"
+page-col: "#FFFFFF"
 text-col: "#404040"
 link-col: "#008AFF"
 hover-col: "#0085A1"
@@ -142,7 +142,7 @@ hover-col: "#0085A1"
 
 navbar-img: "/assets/img/Lines-1.png"
 footer-img: "/assets/img/Lines-1.png"
-page-img: "/assets/img/1200px-RedDwarf.png"
+#page-img: "/assets/img/1200px-RedDwarf.png"
 
 # Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
 #mobile-theme-col: "#0085A1"
