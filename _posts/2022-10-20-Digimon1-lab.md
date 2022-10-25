@@ -17,6 +17,9 @@ comments: true
 {: .box-note}
 **Note:** videos watched for knapsack problem: https://youtu.be/xOlhR_2QCXY, https://youtu.be/dT6dvdbpChA
 
+{: .box-note}
+**Note:** GeeksForGeeks
+
 **This is my Digimon lab**
 
 
@@ -205,5 +208,47 @@ def memTotCheck(m, a, mMax, aMin):
 print("Digimon – " + str(attack_limit(15, 300)) + " – have at least 300 combined attack and within 15 combined memory")
 {% endhighlight %}
 
-### Explanation
-Stuff
+### Explanation, discussion and ways to improve
+This piece of code uses three functions. 2 of the functions are called during the ```attack_limit``` function.
+The attack_limit function runs as follows:
+
+* open file
+* create a 2 dimensional list called ```attackMem``` - a list that contains three lists. The 1st inner list is to contain the ```Attack``` values, the 2nd is to contain the ```Memory``` values, and the 3rd is to contain the ```Number``` of the digimon being referred to.
+* A for loop then runs and checks to make sure the given row has a value for ```Attack```, ```Memory```, and ```Number```, and that the memory value is within 15
+    - Then add  ```Attack``` values to the 1st list in ```attackMem``` with binary insert so as to make the 1st list of ```attackMem``` sorted from least to greatest
+    - add ```Memory``` and ```Number``` to matching indexes in their lists
+* The ```attackMem``` list should be sorted for the ```Attack``` values in the 1st list, with corresponding ```Memory``` and ```Number``` values in corresponding indexes in the other 2 lists
+* call ```MemTotCheck``` on ```AttackMem``` list to get up to 3 index values that meet restrictions on ```Attack``` and ```Memory```
+    - 3 for loops –– ```x```, ```y```, ```z``` –– go through each possible combination of digimon from the given list
+    - ```x```iterates through each index in the list (top to bottom), ```y``` iterates through each index after ```x``` (from top to bottom), and ```z``` iterates through each index after ```x``` (from top to bottom)
+    - since the attack list is organised smallest to biggest, if an ```x``` + ```y``` + ```z``` combo fails to reach the minAttack, then no succeeding ```z``` values will reach minAttack, so you can skip to the next iteration of ```y```
+    - before each for loop, check the current combo value (e.g only ```x```, or only ```x``` + ```y```) to see if they fulfill the requirements. If so, return only 1 (```x```) or 2 (```x``` + ```y```) elements
+* return the number of the digimon(s) that fulfill the combo
+
+One big limitation of this function is that ```memTotCheck``` is hardcoded to return up to 3 digimons/indexes. To stop this, you could write a recursive function - pseudocode:
+
+```def memTotCheck(Memory, Attack, number, maxMem, end):
+#where Memory and Attack are lists, number is the amount of elements (digimon) to include, end is the current element (starting at the top), and maxMem #is the most Memory that can be used
+
+if number or Capacity or end are 0: return 0
+
+result = [0, None, None, None] #- the first index will act as the total value/attack added to this function, the next 3 as indexes which make up the value
+#I will refer to the first element of result as val, and the next 3 as indexes
+
+if Memory[end] > Capacity: call this function without adding the current element –– set result to the returned sum value
+
+else if (the val value of calling this function while including this element(reduce number by 1, reduce MaxMem by Memory[end], and reduce end by 1) + Attack[end]) > than the val of calling this function with end - 1 (calling this function but not including this element)):
+    result's val = the val of calling this function while including this element + Attack[end]
+    result's next index = end
+    go through the index elements of result which are not None and insert the index elements of (calling this function while including this element)
+
+else: 
+    result's val = the val of calling this function with end - 1
+    go through the index elements of result which are not None and insert the index elements of (calling this function with end - 1)
+return result
+```
+
+which would give you back the max combination value of Attack and the indexes of digimon used to make up that attack value —— given ```Memory```, ```Attack```, the ```Number``` of digimon to include, and ```len(Attack)-1``` (i.e the end index of the Attack or Memory lists).
+The reason I did not implement a function like this in the final piece of code is because while I had tried to implement something similar, it did not work.
+
+#### Knapsack Problem ####
