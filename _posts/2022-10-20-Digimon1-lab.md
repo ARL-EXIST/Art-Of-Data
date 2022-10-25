@@ -9,9 +9,6 @@ comments: true
 ---
 
 {: .box-note}
-**Note:** I apologise for the background which might make some things harder to read! I probably should have left it to plain white, but otherwise this is the best background in terms of reading the words, that I had. Other backgrounds were too annoying to read on, and downloading more would be a minor problem.
-
-{: .box-note}
 **Note:** Collaborator(s) - Henry
 
 {: .box-note}
