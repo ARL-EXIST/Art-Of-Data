@@ -225,7 +225,7 @@ The attack_limit function runs as follows:
     - before each for loop, check the current combo value (e.g only ```x```, or only ```x``` + ```y```) to see if they fulfill the requirements. If so, return only 1 (```x```) or 2 (```x``` + ```y```) elements
 * return the number of the digimon(s) that fulfill the combo
 
-One big limitation of this function is that ```memTotCheck``` is hardcoded to return up to 3 digimons/indexes. To stop this, you could write a recursive function - pseudocode:
+This code was fairly simplet to write as I wrote a method for binary sort, and another with three for loops iterating over each value, each for loop living within the previous for loop. One big limitation of this function is that ```memTotCheck``` is hardcoded to return up to 3 digimons/indexes. To stop this, you could write a recursive function - pseudocode:
 
 ~~~
 def memTotCheck(Memory, Attack, number, maxMem, end):
@@ -250,6 +250,64 @@ return result
 ~~~
 
 which would give you back the max combination value of Attack and the indexes of digimon used to make up that attack value —— given ```Memory```, ```Attack```, the ```Number``` of digimon to include, and ```len(Attack)-1``` (i.e the end index of the Attack or Memory lists).
-The reason I did not implement a function like this in the final piece of code is because while I had tried to implement something similar, it did not work.
+The reason I did not implement a function like this in the final piece of code is because while I had tried to implement something somewhat similar to this recursive idea[^1], it did not work. So I did not want to write any more recursive functions and instead used 3 for loops.
+
+ [^1]:See Knapsack Problem section
 
 #### Knapsack Problem ####
+Due to your mention of it in class, I decided to look into the Knapsack problem. The basic idea is that you take a default recursive function that tries both including and discluding the current item for each item of a weight and value list and finding the max of those two returned values. With dynamic coding, you add a memorization table to keep track of item and MaxWeight value, with each individual value being a subproblem of the larger problem, as when you reach an item and maxWeight value that you've reached before, you don't have to recursively check it again, as you've stored the value. I did manage to get a normal, 1 weight, knapsack problem code to function at some point in time, which felt pretty good. However afterwards I decided to implement a merged weight value to get over the hurdle of including only a limited number of digimon/items, as you had mentioned in class. This was a mistake. I struggled with this as I had forgotten some of what you had said in class, and found no online help other than pdf files which I could not understand as they were filled with calculus and DUTCH. I then tried to revert back to a regular knapsack problem piece of code. When I did this, however, the code did not work anymore. I tried to fix it, but I could not. I could not use the knapsack problem code to help me answer question 3 or even as a demonstation/proof of a code solution to the knapsack problem. So I gave up on it.
+
+**The End**
+
+knapsack code:
+{% highlight python linenos %}
+#Below is code that I wrote but unfortunately did not use because it didn't work for some reason
+
+
+#attempted to merge 2 weights into one for knapsack problem
+#code in knapsack function was slightly different when I used this function
+"""def callknapsack(w, w_Two, v, C, C_Two, n):
+    global recursVals
+    recursVals = [[-1] * ((C_Two * 1000000) + C)]*n
+    #print((C_Two * 1000) + C)
+    mergeC = ((C_Two * 1000000) + C)
+    return knapsack(w, w_Two, v, mergeC, n)"""
+
+#makes a global 2d memory array of n by C, then calls knapsack problem
+#this function did not exist when the code worked, but was implemented afterwards to try and fix whatever had stopped working in the code
+def callKnapsack(w, v, C, n):
+    global recursVals
+    recursVals = [[None] * (C+1) ] * (n+1)
+    return knapsack(w, v, C, n)
+
+#Knapsack problem function
+#I was trying to add a second weight which didn't work
+#And when i redid the code for one weight it didnt work for some reason
+#So now this code is broken and doesn't work
+def knapsack(w, v, C, n):
+
+    #if the value for n items and C capacity exists, use the value stored
+    if recursVals[n][C] != None:
+        return recursVals[n][C]
+
+    #Base case - check if n or C is 0, return 0
+    if n == 0 or C == 0:
+        return 0
+
+    #initialise result
+    result = 0
+
+    #if weight at n is greater than c recursively call this function
+    # without adding the current element to the knapsack
+    if w[n] > C:
+        result = knapsack(w, v, C, n - 1)
+    #otherwise take the max of recursively calling this function while adding this current element
+    # in the knapsack and when not including this element
+    else:
+        result = max(knapsack(w, v, C, n - 1), v[n] + knapsack(w, v, C - w[n], n - 1))
+    
+    #store the result of these n and C values and store it in the memory array
+    # return result
+    recursVals[n][C] = result
+    return result
+{% endhighlight %}
