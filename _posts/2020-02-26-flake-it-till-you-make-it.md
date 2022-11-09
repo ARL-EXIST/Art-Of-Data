@@ -1,17 +1,50 @@
 ---
 layout: post
-title: Flake it till you make it
-subtitle: Excerpt from Soulshaping by Jeff Brown
-cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
-tags: [books, test]
+title: Research Meta Analysis
+subtitle: the research
+gh-repo: daattali/beautiful-jekyll
+gh-badge: [star, fork, follow]
+tags: [test]
+comments: true
 ---
 
-Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?
+**This is my Reseach Analysis**
 
-The truth is that no one else can definitively know the path we are here to walk. It’s tempting to listen—many of us long for the omnipotent other—but unless they are genuine psychic intuitives, they can’t know. All others can know is their own truth, and if they’ve actually done the work to excavate it, they will have the good sense to know that they cannot genuinely know anyone else’s. Only soul knows the path it is here to walk. Since you are the only one living in your temple, only you can know its scriptures and interpretive structure.
 
-At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.
+## Tasks
+Task
+Find a scientific study / research paper of your choice.
+Write and publish a blog post with responses to the following:
 
-A soulful notion of success rests on the actualization of our innate image. Success is simply the completion of a soul step, however unsightly it may be. We have finished what we started when the lesson is learned. What a fear-based culture calls a wonderful opportunity may be fruitless and misguided for the soul. Staying in a passionless relationship may satisfy our need for comfort, but it may stifle the soul. Becoming a famous lawyer is only worthwhile if the soul demands it. It is an essential failure if you are called to be a monastic this time around. If you need to explore and abandon ten careers in order to stretch your soul toward its innate image, then so be it. Flake it till you make it.
+1. What are the null and alternative hypotheses?
+2. Who is collecting and analyzing this data?
+3. What datasets does this study reference or use? Are these datasets available to the public?
+4. Why are they interested in this data?
+5. What data is being recorded? What data might be left out?
+6. What evidence did they present to back up their conclusions?
+7. How was this study funded?
+8. Do you think publish or perish had an effect on this study?
+
+## Answers:
+
+The Research paper I found and decided to use was "**Reassessing the value of nursery areas to shark conservation and management**" (https://doi.org/10.1111/j.1755-263X.2008.00046.x), which analyses the importance of protecting shark nusery areas in protecting shark populations, and the level of importance as compared to protecting more mature sharks outside of nurseries.
+
+### Question
+1.  What are the null and alternative hypotheses?
+
+### Explanation
+After reading the research paper it would seem that the null hypothesis is that their is little to no effect in the conservation of shark populations from protecting shark nursery areas. The alternative hypothesis would then be that presevation and protection of shark nursery areas does have a large affect and great importance in the conservation of shark populations as a whole.
+
+### Question
+2.  Who is collecting and analyzing this data?
+
+### Explanation
+The author of this Research Paper are Michael John Kinney & Colin Ashley Simpfendorfer of Fishing and Fisheries Research Centre, School of Earth and Environmental Sciences, James Cook University, Townsville, Queensland, Australia. They are working for a research centre whose focus is on fish and fisheries (so the impact of commercial fishing included) of a university.
+
+### Question
+3.  What datasets does this study reference or use? Are these datasets available to the public?
+
+### Explanation
+
+### Question
+4.  What datasets does this study reference or use? Are these datasets available to the public?
