@@ -9,7 +9,7 @@ comments: true
 ---
 
 {: .box-note}
-**Note:** Collaborator(s) - N/A (in class discussion)
+**Note:** Collaborator(s) - N/A (in class discussion with class members)
 
 ## Tasks
 ## *Task*
@@ -100,6 +100,11 @@ Once the file is open I go through the key values from the first response/sock, 
 Each loop the sock dictionary given from the request is entered into the next row of the ```csv```.
 Each loop also prints the value of ```index``` to serve as a loading bar to know how much progress until the file is written and to know that the program is running/requests are being made. 
 
+### Notes
+
+This was the hardest and most interesting section of the code to do and finish. this was my first full implementations of API's and helped me understand how server adresses work, as well as how parameters work (specifically due to figuring out how ```index``` fit into ```requests``` and using ```requests.ok``` for the while loop).
+I also learnt how to use a ```DictWriter()``` which I had to learn a little extra documentation about the csv such as the fieldnames parameter.
+
 ### Question
 2. Which sock has the most variations? If there is more than one answer, then list all of them.
 
@@ -154,6 +159,10 @@ Make the ```csv``` and ```DictReader()```
 Check the Name of each sock on each row and add it to the ```variations``` dictionary with a count of 1, if it has already been added to the dictionary (meaning it's a repeat) increase the count of the dictionary value by 1.
 ```g.seek(0)``` sets the file reader's position back to the start so next time the file is read it reads from the correct position.
 The ```getMaxDictValue()``` function is called on the ```variations``` dictionary. This function grabs the key value with the largest value and returns it in a list. If a key has the same value (but not greater), it is added to this list. If a key has a greater value the array is reset. The function returns a list of all the key values in the dictionary which contain the greatest value which then get printed along with the number of variations.
+
+### Notes
+
+
 
 ### Question
 3. How many socks of each color are there? If a sock has two different colors, it should be counted in both. However, if a sock has the same Color1 and Color2, make sure you don’t double count it!
