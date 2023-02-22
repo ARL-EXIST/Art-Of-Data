@@ -43,7 +43,7 @@ the syllabus for more details.
 You are allowed to use modules we havenʼt talked about in class, as long as they are cited, and in your blog
 post you include an explanation of how and why they are used.
 
-## Answers:
+## Answer:
 
 ### Question:
 1. Which dataset did you work with?
