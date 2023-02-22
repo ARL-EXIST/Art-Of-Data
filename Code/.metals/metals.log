@@ -1,0 +1,125 @@
+2022.12.13 12:07:54 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/lsp.trace.json or /Users/arunlalHoraceMann/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.12.13 12:07:58 INFO  logging to file /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/metals.log
+2022.12.13 12:07:58 INFO  Started: Metals version 0.11.9 in workspace '/Users/arunlalHoraceMann/Art-Of-Data/Code' for client Visual Studio Code 1.74.0.
+2022.12.13 12:08:04 INFO  time: initialize in 6.74s
+2022.12.13 12:08:10 WARN  Build server is not auto-connectable.
+2022.12.13 12:08:10 WARN  no build tool detected in workspace '/Users/arunlalHoraceMann/Art-Of-Data/Code'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.12.13 12:09:44 WARN  no build target for: /Users/arunlalHoraceMann/Art-Of-Data/Code/PokemonCorrector.java
+Dec 13, 2022 12:09:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+Dec 13, 2022 12:09:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2022.12.13 14:09:23 INFO  shutting down Metals
+2022.12.14 12:13:56 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/lsp.trace.json or /Users/arunlalHoraceMann/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.12.14 12:14:01 INFO  logging to file /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/metals.log
+2022.12.14 12:14:01 INFO  Started: Metals version 0.11.9 in workspace '/Users/arunlalHoraceMann/Art-Of-Data/Code' for client Visual Studio Code 1.74.0.
+Dec 14, 2022 12:14:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FINGERPRINTS" not found; SQL statement:
+select path, text, md5 from fingerprints; [42102-214]
+java.util.concurrent.CompletionException: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FINGERPRINTS" not found; SQL statement:
+select path, text, md5 from fingerprints; [42102-214]
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:346)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:704)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2088)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.apply(FutureConvertersImpl.scala:29)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.apply(FutureConvertersImpl.scala:26)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at scala.concurrent.ExecutionContext$parasitic$.execute(ExecutionContext.scala:222)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:429)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete0(Promise.scala:285)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:504)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FINGERPRINTS" not found; SQL statement:
+select path, text, md5 from fingerprints; [42102-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8398)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8369)
+	at org.h2.command.Parser.readTableOrView(Parser.java:8358)
+	at org.h2.command.Parser.readTablePrimary(Parser.java:1863)
+	at org.h2.command.Parser.readTableReference(Parser.java:2334)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2772)
+	at org.h2.command.Parser.parseSelect(Parser.java:2878)
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2762)
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2633)
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2612)
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2605)
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2598)
+	at org.h2.command.Parser.parseQuery(Parser.java:2567)
+	at org.h2.command.Parser.parsePrepared(Parser.java:724)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at scala.meta.internal.metals.JdbcEnrichments$XtensionConnection.query(JdbcEnrichments.scala:35)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:55)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:864)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2022.12.14 12:14:10 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/lsp.trace.json or /Users/arunlalHoraceMann/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.12.14 12:14:11 INFO  logging to file /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/metals.log
+2022.12.14 12:14:11 INFO  Started: Metals version 0.11.9 in workspace '/Users/arunlalHoraceMann/Art-Of-Data/Code' for client Visual Studio Code 1.74.0.
+2022.12.14 12:14:18 ERROR Migration of schema "PUBLIC" to version "1 - Create tables" failed! Please restore backups and roll back database and code!
+2022.12.14 12:14:18 WARN  resetting database: /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/metals.h2.db
+2022.12.14 12:14:18 ERROR org.flywaydb.core.api.FlywayException: Unable to execute clean as it has been disabled with the 'flyway.cleanDisabled' property.
+	at org.flywaydb.core.internal.command.DbClean.clean(DbClean.java:61)
+	at org.flywaydb.core.Flyway.doClean(Flyway.java:353)
+	at org.flywaydb.core.Flyway.lambda$clean$2(Flyway.java:212)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:204)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:211)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:864)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+2022.12.14 12:14:18 WARN  resetting database: /Users/arunlalHoraceMann/Art-Of-Data/Code/.metals/metals.h2.db
+2022.12.14 12:14:18 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory '/Users/arunlalHoraceMann/Art-Of-Data/Code'.org.flywaydb.core.api.FlywayException: Unable to execute clean as it has been disabled with the 'flyway.cleanDisabled' property.
+	at org.flywaydb.core.internal.command.DbClean.clean(DbClean.java:61)
+	at org.flywaydb.core.Flyway.doClean(Flyway.java:353)
+	at org.flywaydb.core.Flyway.lambda$clean$2(Flyway.java:212)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:204)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:211)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:864)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+2022.12.14 12:14:20 INFO  time: initialize in 8.77s
+2022.12.14 12:14:26 WARN  Build server is not auto-connectable.
+2022.12.14 12:14:26 WARN  no build tool detected in workspace '/Users/arunlalHoraceMann/Art-Of-Data/Code'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.12.14 12:14:26 WARN  no build target for: /Users/arunlalHoraceMann/Art-Of-Data/Code/PokemonCorrector.java
+2022.12.14 13:47:06 INFO  shutting down Metals
