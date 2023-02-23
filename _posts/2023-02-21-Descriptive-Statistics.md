@@ -43,7 +43,7 @@ sns.histplot(data=crashes, x="CRASH TIME INT", bins=24, hue="BOROUGH", hue_order
 crashes["CRASH TIME INT"].describe()/3600
 {% endhighlight %}
 
-![Graph 1](../assets/img/Graph1)
+![Graph 1](../assets/img/Graph1.png)
 
 Here I wrote a function, using the apply method, to convert all the datetime objects in the second column to integers written into a new column, so it can be more easily read by the seaborn graph plots in histograms.
 
@@ -57,7 +57,7 @@ This works for car type as well, as if lots of sedans are on the road, there wil
 sns.countplot(data=crashes, x="NUMBER OF PERSONS INJURED", hue="VEHICLE TYPE CODE 1", order=crashes.value_counts(crashes["NUMBER OF PERSONS INJURED"]).iloc[1:5].index, hue_order=crashes.value_counts(crashes["VEHICLE TYPE CODE 1"]).iloc[:5].index)
 {% endhighlight %}
 
-![Graph 9](../assets/img/Graph9)
+![Graph 9](../assets/img/Graph9.png)
 
 There is also the issue of dataset size which becomes apparent when analyzing the data for persons killed. In terms of graphing it, most crashes have 0 deaths. :
 
@@ -66,7 +66,7 @@ There is also the issue of dataset size which becomes apparent when analyzing th
 sns.countplot(data=crashes, x="NUMBER OF PERSONS KILLED", hue="VEHICLE TYPE CODE 1", order=crashes.value_counts(crashes["NUMBER OF PERSONS KILLED"]).iloc[0:5].index, hue_order=crashes.value_counts(crashes["VEHICLE TYPE CODE 1"]).iloc[:5].index)
 {% endhighlight %}
 
-![Graph 10](../assets/img/Graph10)
+![Graph 10](../assets/img/Graph10.png)
 
 The values for 1 persons killed are barely visible and makes the data appear as if there is basically 0 car crashes with 1 person killed, making it hard to analyze the crashes with persons killed. When analyzing data excluding the 0 death car crashes:
 
@@ -75,7 +75,7 @@ The values for 1 persons killed are barely visible and makes the data appear as 
 sns.countplot(data=crashes, x="NUMBER OF PERSONS KILLED", hue="VEHICLE TYPE CODE 1", order=crashes.value_counts(crashes["NUMBER OF PERSONS KILLED"]).iloc[1:5].index, hue_order=crashes.value_counts(crashes["VEHICLE TYPE CODE 1"]).iloc[:5].index)
 {% endhighlight %}
 
-![Graph 11](../assets/img/Graph11)
+![Graph 11](../assets/img/Graph11.png)
 
 The data becomes so small as to become unreliable, suggesting that only sedans have crashes with more than 1 death. This is just due to the fact that there are so few crashes with more than 1 deaths, and the majority of vehicles on the road are sedans.
 
@@ -90,7 +90,7 @@ sns.histplot(data=crashesInjured, x="CRASH TIME INT", bins=24, hue="NUMBER OF PE
 crashesInjured["CRASH TIME INT"].describe()/3600
 {% endhighlight %}
 
-![Graph 2](../assets/img/Graph2)
+![Graph 2](../assets/img/Graph2.png)
 
 The 2nd graph follows the trend for the main graph somewhat similarly. The number of crashes with injuries (excluding 0 injury crashes) increased from 300 to 1450 between 04:00 to 19:00, an increase by a factor of 4.83. For the same time period with total crashes, the number of crashes increases from 1000 to 5000, a factor increase of 5. The total crashes and injury crashes both increase by a sizeable amount, retaining the same rough shape, increasing in number at roughly the same time and decreasing at roughly the same time, suggesting time does not have much of effect on number of crash injuries. If we do this same analysis for number of crashes with persons killed:
 
@@ -100,7 +100,7 @@ sns.histplot(data=crashesKilled, x="CRASH TIME INT", bins=24, hue="NUMBER OF PER
 crashesKilled["CRASH TIME INT"].describe()/3600
 {% endhighlight %}
 
-![Graph 3](../assets/img/Graph3)
+![Graph 3](../assets/img/Graph3.png)
 
 For this graph we would expect the crash deaths to follow a similar trend to overall crashes if the variable is independent of time. However the graph does not trend downwards until 08:00, and then increasing until 20:00 before falling back down. For 1 death crashes it is hard to say that here is a strong relationship or trend, but it would appear that the number of crashes with 1 deaths stays somewhat constant or possibly follows a curve with a low point at mid day and high points at the start and end of the day. Furthermore, crashes with greater than 1 deaths only occur during the first 6 or last 4 hours of the day, almost the opposite to when the most number of crashes happen. This suggests that some times might be more prone for people to be killed in car crashes, particularly the hours of 20:00 to 6:00, where we would normally expect to see a lower number of deathly crashes due to less actual crashes occuring at those times overall. However, one notable problem with this graph is the size of this specific section of data. The total number of crashes amounts to 153 for this section of the dataset, with a max count of crashes in 1 specific hour interval of only 10. The size of this dataset is much smaller in comparison to the overall dataset, making it much less reliable and certain.
 Some other graphs that do not yield any substantial correlations or connections are:
@@ -110,28 +110,28 @@ Some other graphs that do not yield any substantial correlations or connections 
 sns.histplot(data=crashes, x="CRASH TIME INT", bins=24, hue="CONTRIBUTING FACTOR VEHICLE 1", hue_order=crashes.value_counts(crashes["CONTRIBUTING FACTOR VEHICLE 1"]).iloc[0:6].index, multiple="stack")
 {% endhighlight %}
 
-![Graph 4](../assets/img/Graph4)
+![Graph 4](../assets/img/Graph4.png)
 
 {% highlight python linenos %}
 # 5th graph
 sns.histplot(data=crashes, x="CRASH TIME INT", bins=24, hue="CONTRIBUTING FACTOR VEHICLE 1", hue_order=crashes.value_counts(crashes["CONTRIBUTING FACTOR VEHICLE 1"]).iloc[1:6].index, multiple="stack")
 {% endhighlight %}
 
-![Graph 5](../assets/img/Graph5)
+![Graph 5](../assets/img/Graph5.png)
 
 {% highlight python linenos %}
 # 6th graph
 sns.countplot(data=crashes, y="ON STREET NAME", order=crashes.value_counts(crashes["ON STREET NAME"]).iloc[:10].index)
 {% endhighlight %}
 
-![Graph 1](../assets/img/Graph1)
+![Graph 1](../assets/img/Graph1.png)
 
 {% highlight python linenos %}
 # 7th graph
 sns.countplot(data=crashes, y="CONTRIBUTING FACTOR VEHICLE 1", order=crashes.value_counts(crashes["CONTRIBUTING FACTOR VEHICLE 1"]).iloc[:20].index)
 {% endhighlight %}
 
-![Graph 7](../assets/img/Graph7)
+![Graph 7](../assets/img/Graph7.png)
 
 {% highlight python linenos %}
 crashesDID = crashes[crashes["CONTRIBUTING FACTOR VEHICLE 1"] == "Driver Inattention/Distraction"]
@@ -140,7 +140,7 @@ crashesDID = crashes[crashes["CONTRIBUTING FACTOR VEHICLE 1"] == "Driver Inatten
 sns.countplot(data=crashesDID, y="BOROUGH", order=crashesDID.value_counts(crashesDID["BOROUGH"]).iloc[:10].index)
 {% endhighlight %}
 
-![Graph 8](../assets/img/Graph8)
+![Graph 8](../assets/img/Graph8.png)
 
 There is some information available in the lack of information.
 
@@ -149,14 +149,14 @@ There is some information available in the lack of information.
 sns.countplot(data=crashes, x="NUMBER OF PERSONS INJURED", order=crashes.value_counts(crashes["NUMBER OF PERSONS INJURED"]).iloc[0:5].index, hue_order=crashes.value_counts(crashes["VEHICLE TYPE CODE 1"]).iloc[:5].index)
 {% endhighlight %}
 
-![Graph 12](../assets/img/Graph12)
+![Graph 12](../assets/img/Graph12.png)
 
 {% highlight python linenos %}
 # 13th graph
 sns.countplot(data=crashes, x="NUMBER OF PERSONS KILLED", order=crashes.value_counts(crashes["NUMBER OF PERSONS KILLED"]).iloc[0:5].index, hue_order=crashes.value_counts(crashes["VEHICLE TYPE CODE 1"]).iloc[:5].index)
 {% endhighlight %}
 
-![Graph 13](../assets/img/Graph13)
+![Graph 13](../assets/img/Graph13.png)
 
 Looking at the 12th graph, the vast majority of crashes have 0 injuries, roughly 5500. 1 person injury crashes total to around 1500 crashes, and each subsequent crashes bar with more than 1 person injured totals to less than 500. The majority of the crashes are between 0 and 1 injuries. Focusing on only 0 or 1 injury crashes, 0 injury crashes acount for just under 80% of the total crashes. 
 Looking at the 13th graph, the overwhelming majority of crashes have 0 persons killed, so great that each subsequent category (1, 2, 3 persons killed) is practically negligible.
