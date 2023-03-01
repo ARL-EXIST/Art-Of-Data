@@ -43,7 +43,7 @@ sns.histplot(data=crashes, x="CRASH TIME INT", bins=24, hue="BOROUGH", hue_order
 crashes["CRASH TIME INT"].describe()/3600
 {% endhighlight %}
 
-![Graph 1](../assets/img/Graph1.png)
+![graph 1](../assets/img/graph1.png)
 
 Here I wrote a function, using the apply method, to convert all the datetime objects in the second column to integers written into a new column, so it can be more easily read by the seaborn graph plots in histograms.
 
