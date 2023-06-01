@@ -12,7 +12,7 @@ comments: true
 **Note:** Collaborator(s) - N/A
 
 {: .box-note}
-**Note:** 
+**Note:** The start of this project is the same as my qunatitave data project, as the data is still relevant and it allows my topic to fit more cleanly into a succinct and complete blog post
 
 **This is my DP lab**
 
@@ -29,7 +29,7 @@ Also for any human references we will be using a cuboid of dimensions 1.76 meter
 
 ### Accommodations
 Before we get into planes let’s quickly consider some of the accommodations for the Rexes.
-Economy class chairs typically weigh around 8-15 kg (18-33 lb.). To scale up from human height to Rex length, we have to multiply by a factor of 6.25, from human width to Rex width, we have to multiply by a factor of 3.9, and for human length to Rex height, we have to multiply by a factor of 20.34. The total scale factor to get the Rex weightherfore is 495.7875 times the human weight. This means we can estimate the seat weight to be 3967.48 kg.
+Economy class chairs typically weigh around 8-15 kg (18-33 lb.). To scale up from human height to Rex length, we have to multiply by a factor of 6.25, from human width to Rex width, we have to multiply by a factor of 3.9, and for human length to Rex height, we have to multiply by a factor of 20.34. The total scale factor to get the Rex weight is therfore 495.7875 times the human weight. This means we can estimate the seat weight to be 3967.48 kg.
 If we want to have a high class commercial plane line we might also want to include some flight food. National Geographic has stated that a T Rex ate 227 kilograms of meat per day. The average plane meal for humans contains around 360 calories, which is 14.4% of a human’s daily intake. For a Rex the proportional amount of meat would then be 32.688 kg.
 
 
@@ -43,10 +43,10 @@ Now obviously we can't just stick the Rexes on with magic. We have to use glue o
 ### The Imaginary Plane(s)
 For our first plane we have been considering a real plane that is guaranteed to work. But why? The reason we are constructing this technology is for innovation in the airline sector to open up to the new dinosauria market. While we may want to remain within the realms of feasibility, we can push the envelope in terms of transportation methods. For this reason we can consider two types of imaginary planes: Multiplanes and Gigaplanes. Using these planes we can hopefully set reasonable prices for tickets, for affordable Rex flight, and then maximize profits. The dinosaurs come first, but it doesn't hurt to consider our own interests.
 
-Before Describing these two planar methods, we need some data to analyze. Both of these methods involve using real planes to create a hypothetical plane. Since they are both based on pre-existing planes, we need some data on real planes to compare what is the most effective for each method and determine how the real plane we are basing our imaginary planes on would affect our expected (theoretical) values. For this reason I have constructed a dataset (including data principally from wikepedia) on different planes to use. The data shows the mass of the max payload that the plane can carry, the max takeoff weight, the max takeoff weight minus the weight of the payload (i.e the weight of the plane including fuel), the Cost of renting one of that plane out per hour, and the speed at which it travels.
+Before Describing these two planar methods, we need some data to analyze. Both of these methods involve using real planes to create a hypothetical plane. Since they are both based on pre-existing planes, we need some data on real planes to compare what is the most effective for each method and determine how the real plane we are basing our imaginary planes on would affect our expected (theoretical) values. For this reason I have constructed a dataset (including data principally from wikepedia) on different planes to use. The data shows the mass of the max payload that the plane can carry, the max takeoff weight, the max takeoff weight minus the weight of the payload (i.e the weight of the plane including fuel), the Cost of renting one of that plane out per hour, the speed at which it travels, and the number of seats it has. This data table is relatively small (with only 10 planes listed) as there is no simple exhaustive list that is easily accessible with all the desired data, and finding info was a relatively tiresome process. While this data is small, it ecompasses a wide range of types of planes, from cargo planes, to commercial airliners, to light utility planes, and fighter jets.
 
-## Gigaplane
-The first imaginary plane involves very straightforwardly scaling up a pre-existing plane to dinosaur scale. 
+## Gigaplane (Ultra-imaginary)
+The first imaginary plane involves very straightforwardly scaling up a pre-existing plane to dinosaur scale. While there may be more limitations to plane making than simply scaling a plane, for our purposes we will simply consider it as if we can just enlarge real planes to carry more mass. We have already figured out the factor needed to scale a human seat size to a Rex seat size in order to maintain realistic dimensions for Rex passengers. This gave us multiplying factor of 495.7875 for the mass (after multiplying by height, width and depth). For our gigaplane we can do the same as we did for the seat dimensions, scaling one plane by ~496 so it would have available seating sizes for the Rexes. If we scale a lone human passenger's mass (62kg) to a lone Rex passenger's (5000 kg), we multiply by a factor of 80.645. Since this is less than our scaling factor due to dimensions, we do not need to worry about whether our gigaplane can carry the equivalent number of Rex passengers as the regular plane with human passengers. The dimension scaler more than scales this for carrying enough mass.
   
 {% highlight python linenos %}
 
