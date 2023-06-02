@@ -1,15 +1,17 @@
 import math
 import matplotlib.pyplot as plt
 import numpy as np
-
-def constrain(val, min_val, max_val):
-    return min(max_val, max(min_val, val))
+import pandas as pd
+import seaborn as sns
+import csv
+from pickletools import read_bytes1
 
 fig, axs = plt.subplots()          # Setting up plot
 
 x = 1    #Number of Planes   -   variable
 y = 1    #Number of T-Rexes   -   variable
 
+""" Physics based graphs and planes not used in final project
 r = 3.35    #Radius of Plane Fuselage
 wingspan = 28.45    #Wingspan
 wF = 3.34   #Width of Fuselage
@@ -17,7 +19,7 @@ aF = np.pi*(r**2)   #Cross-Sectional Area of Fuselage
 aW = 1*(wingspan-wF)    #Cross-Sectional Area of Wing
 
 mP = 44500    #Mass of a Plane
-mT = 5500    #Mass of a T-Rex
+mT = 5000    #Mass of a T-Rex
 cdP = 0.0075    #Coefficient of Drag for the Plane
 cdT = 0.7    #Coefficient of Drag for the T-Rex
 aP = aF + aW    #Cross-Sectional Area of a Plane
@@ -38,10 +40,10 @@ b = p* math.sqrt(2)* math.sin(theta)* ((x*cdP*aP) + (y*cdT*aT))
 speed = math.sqrt(a/b)  #Speed equation
 
 #print(d +", " + cPPPH + ", " + x + ", " + speed)
-print("%f, %f, %f, %f" % (d, cPPPH, x, speed))
+#print("%f, %f, %f, %f" % (d, cPPPH, x, speed))
 #print(d), print(cPPPH)
 
-cTotal = (d*cPPPH*x) / speed    #Total Cost equation
+profitComplex = (d*cPPPH*x) / speed    #Total Cost equation
 
 max = 0
 xMax = 0
@@ -61,3 +63,54 @@ for x in range(1,10000):
             yMax = y
         print((x*10000)+y)
 print("(" + str(x) + ", " + str(y) + ")" + ", " + str(max))
+"""
+
+PLANE_PATH = "../datasets/PlaneData.csv"
+planes = pd.read_csv(PLANE_PATH)
+
+mT = 5000    #Mass of a T-Rex
+
+cTicket = 100    #Cost of One Ticket
+d = 5570.5      #Distance of Flight
+scale = 495.7875    #Scale for Gigaplane (Human size *scale = Rex size)
+
+cPPPH = 0  #Cost Per Plane Per Hour of Flight
+mP = 0    #Mass of a Plane
+mTOW = 0    #Mass of Take Off Weight
+mC = 0      #Mass of max Payload for Plane or 'Cargo'
+speed = 0   #Cruise speed of Plane
+
+costInput = d*x*cPPPH / speed
+y = x*mC / mT
+profitBasic = []#(y*cTicket) - costInput
+FlightDebtCount = []
+
+with open("../datasets/PlaneDate.csv", "r") as f:
+    with open("../datasets/PlaneDate.csv", "w") as g:  
+        reader = csv.DictReader(f)
+        writer = csv.DictWriter(g)
+
+        headers = reader.fieldnames
+
+        for rows in reader:
+            
+            mC = rows[1]      #Mass of max Payload for Plane or 'Cargo'
+            mTOW = rows[2]    #Mass of Take Off Weight
+            mP = rows[3]    #Mass of a Plane
+            cPH = rows[4]  #Cost Per Plane Per Hour of Flight
+            speed = rows[5]   #Cruise speed of Plane
+            seats =	rows[6]     #Number of seats on Plane
+            cP = rows[7]       #Cost of one Plane
+            #mCScaled = mC *scale    #Scaled payload for Gigaplane
+            cPPScaled = cP *scale   #Scaled cost for Gigaplane
+            FlightDebtCount.append(cP/(seats*cTicket))
+
+        
+planes = pd.read_csv("../datasets/PlaneDate.csv")
+
+planes.assign(FlightsNeededtoPayOffDebt=FlightDebtCount)
+sns.barplot(data=planes, x="Planes", y="FlightsNeededtoPayOffDebt")
+
+costInput = d*x*cPPPH / speed
+y = x*mC / mT
+profitBasic.append((y*cTicket) - costInput)
