@@ -632,6 +632,18 @@ footer .footer-custom-content {
 
 /* --- Post and page headers --- */
 
+/* Widen title and subtitle container on the homepage only */
+.intro-header.col-lg-8.col-lg-offset-2 {
+    width: 100% !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+}
+
+.intro-header.col-md-10.col-md-offset-1 {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+  
 .intro-header {
   margin: 5rem 0 1.25rem;
   position: relative;
